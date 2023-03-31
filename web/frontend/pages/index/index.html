@@ -10,21 +10,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
   </head>
-  <body>
-    <div class="container my-5">
-      <h1>Welcome to Spring Hackathon 2023 🎉</h1>
-      <div class="px-0">
-        <p class="fs-5">
-          Today, we are going to create a photo booth app, where we can connect our bluetooth
-          remotes to our web application, and capture a picture.
-        </p>
-        <p>Feel free to download or copy-and-paste any parts of this example.</p>
+  <body class="position-relative" style="overflow-y: scroll;">
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-light bg-light fixed-bottom">
+      <div class="container-xxl">
+        <a href="#" class="navbar-brand">
+          <span class="text-secondary">Photo Booth</span>
+        </a>
 
-        <hr class="col-2 my-4">
-        <button type="button" class="btn btn-success">Connect Remote</button>
-        <a href="https://getbootstrap.com" class="btn btn-primary">Read the Bootstrap docs</a>
-        <a href="https://github.com/twbs/examples" class="btn btn-secondary">View Code on GitHub</a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="#intro" class="nav-link">
+              Introduction
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#app" class="nav-link">
+              Application
+            </a>
+          </li>
+        </ul>
       </div>
+    </nav>
+
+    <!-- ScrollSpy -->
+    <div data-spy="scroll" data-target="#navbar" data-offset="0">
+      <section id="intro">
+        <div class="container-lg mt-5 h-100">
+          <div class="row g-4 justify-content-center align-items-center">
+            <div class="col-md-5">
+              <h1>
+                <div class="display-2">Penn State Harrisburg</div>
+                <div class="display-5 text-muted">Spring Hackathon 2023</div>
+              </h1>
+              <p class="lead my-4 text-muted">
+                Congratulations on your bluetooth remotes!
+                Now, let's put them to the test, by creating a photo booth application.
+                Our remotes will be used to trigger the camera to take the photo and combine
+                all the photos to create a fun video.
+              </p>
+            </div>
+            <div class="col-md-5 d-none d-md-block">
+              <img class="img-fluid rounded" src="/assets/introImage.jpg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="app">
+        <div class="container-lg mt-5 h-100">
+          <div class="row g-4 justify-content-center align-items-center">
+            <div class="col-md-5">
+              <h1>
+                <div class="display-2">Penn State Harrisburg</div>
+                <div class="display-5 text-muted">Spring Hackathon 2023</div>
+              </h1>
+              <p class="lead my-4 text-muted">
+                Congratulations on your bluetooth remotes!
+                Now, let's put them to the test, by creating a photo booth application.
+                Our remotes will be used to trigger the camera to take the photo and combine
+                all the photos to create a fun video.
+              </p>
+            </div>
+            <div class="col-md-5 d-none d-md-block">
+              <img class="img-fluid rounded" src="/assets/introImage.jpg" />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>
