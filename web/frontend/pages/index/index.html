@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photo Booth</title>
     <script src = "./index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,9 +38,9 @@
 
     <!-- Introduction -->
     <section id="intro">
-      <div class="container-lg">
-        <div class="row g-4 justify-content-center align-items-center" style="height: 100vh;">
-          <div class="col-md-5">
+      <div class="container-lg mt-5">
+        <div class="row gap-4 justify-content-center align-items-center">
+          <div class="col-md-5 col">
             <h1>
               <div class="display-2">Penn State Harrisburg</div>
               <div class="display-5 text-muted">Spring Hackathon 2023</div>
@@ -51,6 +51,12 @@
               Our remotes will be used to trigger the camera to take the photo and combine
               all the photos to create a fun video.
             </p>
+            <!-- Button Group for Resources -->
+            <div class="d-flex flex-row gap-2">
+              <button type="button" class="btn btn-success">Connect Remote</button>
+              <a href="https://github.com/dineshUmasankar/PSH-SpringHackathon2023" type="button" class="btn btn-dark">View Code On Github</a>
+              <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" type="button" class="btn btn-secondary">Bootstrap Documentation</a>
+            </div>
           </div>
           <div class="col-md-5 d-none d-md-block">
             <img class="img-fluid rounded" src="/assets/introImage.jpg" />
@@ -61,19 +67,11 @@
 
       <!-- Application -->
       <section id="app">
-        <div class="container-lg">
-          <div class="row g-4 justify-content-center align-items-center" style="height: 100vh;">
-            <div class="col-md-5">
-              <h1>
-                <div class="display-2">Photo Booth Application</div>
-                <div class="display-5 text-muted">Spring Hackathon 2023</div>
-              </h1>
-              <p class="lead my-4 text-muted">
-                Here lies the photo booth.
-              </p>
-            </div>
-            <div class="col-md-5 d-none d-md-block">
-              <img class="img-fluid rounded" src="/assets/introImage.jpg" />
+        <div class="container-lg mt-5">
+          <div class="row gap-4 justify-content-center align-items-center">
+            <div class="col">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nulla itaque delectus ad cumque vero eos aliquam natus corrupti ipsum libero eum cum nam, obcaecati est, neque illum a impedit! Voluptas minus repellendus eaque repudiandae unde sunt adipisci. Eos nisi illo sequi voluptatum praesentium id non inventore. Illum unde, praesentium fuga nostrum natus pariatur culpa placeat blanditiis dolorum ratione beatae minus facilis. Temporibus animi eius, dolorum illo esse magnam sequi fuga quis maiores consequuntur aliquid consectetur quia iusto quos dignissimos facere vero ad corrupti reprehenderit placeat enim quo officia. Rem consectetur eos, sapiente iste dolor vitae quibusdam veritatis veniam. Rem?</p>
+              <button id="startApplication" class="btn btn-success">Start Application</button>
             </div>
           </div>
         </div>
