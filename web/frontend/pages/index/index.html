@@ -3,7 +3,6 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photo Booth</title>
-    <script src = "./index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -39,7 +38,7 @@
     <!-- Introduction -->
     <section id="intro">
       <div class="container-lg mt-5">
-        <div class="row gap-4 justify-content-center align-items-center">
+        <div class="row gap-4 justify-content-center align-items-center" style="height: 90vh;">
           <div class="col-md-5 col">
             <h1>
               <div class="display-2">Penn State Harrisburg</div>
@@ -68,14 +67,26 @@
       <!-- Application -->
       <section id="app">
         <div class="container-lg mt-5">
-          <div class="row gap-4 justify-content-center align-items-center">
+          <div class="row gap-4 justify-content-center align-items-center" style="height: 90vh;">
             <div class="col">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nulla itaque delectus ad cumque vero eos aliquam natus corrupti ipsum libero eum cum nam, obcaecati est, neque illum a impedit! Voluptas minus repellendus eaque repudiandae unde sunt adipisci. Eos nisi illo sequi voluptatum praesentium id non inventore. Illum unde, praesentium fuga nostrum natus pariatur culpa placeat blanditiis dolorum ratione beatae minus facilis. Temporibus animi eius, dolorum illo esse magnam sequi fuga quis maiores consequuntur aliquid consectetur quia iusto quos dignissimos facere vero ad corrupti reprehenderit placeat enim quo officia. Rem consectetur eos, sapiente iste dolor vitae quibusdam veritatis veniam. Rem?</p>
-              <button id="startApplication" class="btn btn-success">Start Application</button>
+              <!-- Live Camera Preview -->
+              <video id="liveCam" class="bg-dark rounded w-100 h-75"></video>
+
+              <!-- Store Current Image & Save -->
+              <canvas id="canvas" style="display:none"></canvas>  
+              
+              <!-- Application Controls -->
+              <div class="d-flex flex-row gap-2">
+                <button id="startCamera" type="button" class="btn btn-success">Start Camera</button>
+                <button id="snapPicture" type="button" class="btn btn-dark">Snap a Picture</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </div>
+
+    <!-- Javascript -->
+    <script src = "./index.js"></script>
   </body>
 </html>
