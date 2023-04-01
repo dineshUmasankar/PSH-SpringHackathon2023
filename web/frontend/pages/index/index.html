@@ -12,13 +12,16 @@
   </head>
   <body class="position-relative" style="overflow-y: scroll;">
     <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-light bg-light fixed-bottom">
+    <nav id="menu" class="navbar navbar-light bg-light fixed-bottom">
       <div class="container-xxl">
+
+        <!-- Navbar Brand / Title -->
         <a href="#" class="navbar-brand">
           <span class="text-secondary">Photo Booth</span>
         </a>
 
-        <ul class="nav nav-pills">
+        <!-- Navbar Links -->
+        <ul class="nav nav-underline">
           <li class="nav-item">
             <a href="#intro" class="nav-link">
               Introduction
@@ -33,43 +36,40 @@
       </div>
     </nav>
 
-    <!-- ScrollSpy -->
-    <div data-spy="scroll" data-target="#navbar" data-offset="0">
-      <section id="intro">
-        <div class="container-lg mt-5 h-100">
-          <div class="row g-4 justify-content-center align-items-center">
-            <div class="col-md-5">
-              <h1>
-                <div class="display-2">Penn State Harrisburg</div>
-                <div class="display-5 text-muted">Spring Hackathon 2023</div>
-              </h1>
-              <p class="lead my-4 text-muted">
-                Congratulations on your bluetooth remotes!
-                Now, let's put them to the test, by creating a photo booth application.
-                Our remotes will be used to trigger the camera to take the photo and combine
-                all the photos to create a fun video.
-              </p>
-            </div>
-            <div class="col-md-5 d-none d-md-block">
-              <img class="img-fluid rounded" src="/assets/introImage.jpg" />
-            </div>
+    <!-- Introduction -->
+    <section id="intro">
+      <div class="container-lg">
+        <div class="row g-4 justify-content-center align-items-center" style="height: 100vh;">
+          <div class="col-md-5">
+            <h1>
+              <div class="display-2">Penn State Harrisburg</div>
+              <div class="display-5 text-muted">Spring Hackathon 2023</div>
+            </h1>
+            <p class="lead my-4 text-muted">
+              Congratulations on your bluetooth remotes!
+              Now, let's put them to the test, by creating a photo booth application.
+              Our remotes will be used to trigger the camera to take the photo and combine
+              all the photos to create a fun video.
+            </p>
+          </div>
+          <div class="col-md-5 d-none d-md-block">
+            <img class="img-fluid rounded" src="/assets/introImage.jpg" />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
+      <!-- Application -->
       <section id="app">
-        <div class="container-lg mt-5 h-100">
-          <div class="row g-4 justify-content-center align-items-center">
+        <div class="container-lg">
+          <div class="row g-4 justify-content-center align-items-center" style="height: 100vh;">
             <div class="col-md-5">
               <h1>
-                <div class="display-2">Penn State Harrisburg</div>
+                <div class="display-2">Photo Booth Application</div>
                 <div class="display-5 text-muted">Spring Hackathon 2023</div>
               </h1>
               <p class="lead my-4 text-muted">
-                Congratulations on your bluetooth remotes!
-                Now, let's put them to the test, by creating a photo booth application.
-                Our remotes will be used to trigger the camera to take the photo and combine
-                all the photos to create a fun video.
+                Here lies the photo booth.
               </p>
             </div>
             <div class="col-md-5 d-none d-md-block">
