@@ -18,11 +18,6 @@ const getMediaStream = (constraints) => {
                 video.play();
             }
 
-            startCameraButton.innerText = "Stop Camera";
-            startCameraButton.classList.remove("btn-primary");
-            startCameraButton.classList.add("btn-danger");
-            startCameraButton.removeEventListener("click", startCamera);
-            startCameraButton.addEventListener("click", stopCamera);
         }).catch(function(err) {
             console.log(err)
         });
@@ -33,24 +28,46 @@ const getMediaStream = (constraints) => {
 
 const startCameraButton = document.getElementById("startCamera");
 
-const startCamera = () => {
+const clickStartCameraBtn = () => {
     getMediaStream(constraints);
+    changeStartToStopBtn();
 }
 
-const stopCamera = () => {
+const changeStartToStopBtn = () => {
+    startCameraButton.innerText = "Stop Camera";
+    startCameraButton.classList.remove("btn-primary");
+    startCameraButton.classList.add("btn-danger");
+    startCameraButton.removeEventListener("click", clickStartCameraBtn);
+    startCameraButton.addEventListener("click", clickStopCameraBtn);
+}
+
+const clickStopCameraBtn = () => {
     video.srcObject.getTracks().forEach(track => track.stop());
+    video.srcObject = null;
     startCameraButton.innerText = "Start Camera";
     startCameraButton.classList.remove("btn-danger");
     startCameraButton.classList.add("btn-primary");
-    startCameraButton.addEventListener("click", startCamera);
+    startCameraButton.addEventListener("click", clickStartCameraBtn);
 }
 
-startCameraButton.addEventListener("click", startCamera);
+startCameraButton.addEventListener("click", clickStartCameraBtn);
 
 const snapPictureButton  = document.getElementById("snapPicture");
+const canvas = document.getElementById("canvas");
+const snapPicture = () => {
+    if (video.srcObject == null) {
+        alert("Please start the camera first.");
+    } else {
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas.getContext('2d').drawImage(video, 0, 0);
 
-snapPictureButton.addEventListener("click", () => {
-    let canvas = document.getElementById("canvas");
-    let context = canvas.getContext("2d");
-    context.drawImage(video, 0, 0, 1200, 600);
-});
+        canvasToImage(canvas, {
+            name: 'image',
+            type: 'png',
+            quality: 1
+        })
+    }
+}
+
+snapPictureButton.addEventListener("click", snapPicture);
