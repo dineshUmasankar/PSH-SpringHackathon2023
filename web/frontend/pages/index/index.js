@@ -17,18 +17,40 @@ const getMediaStream = (constraints) => {
             video.onloadedmetadata = function(e) {
                 video.play();
             }
+
+            startCameraButton.innerText = "Stop Camera";
+            startCameraButton.classList.remove("btn-primary");
+            startCameraButton.classList.add("btn-danger");
+            startCameraButton.removeEventListener("click", startCamera);
+            startCameraButton.addEventListener("click", stopCamera);
         }).catch(function(err) {
             console.log(err)
         });
     } else {
-        alert('Your browser does not support getUserMedia API')
+        alert("Your browser does not support the MediaDevices.getUserMedia() method.");
     }
 }
 
-const startCameraButton = document.getElementById("startCamera").addEventListener("click", () => {
-    getMediaStream(constraints);
-});
+const startCameraButton = document.getElementById("startCamera");
 
-const snapPictureButton  = document.getElementById("snapPicture").addEventListener("click", () => {
-    console.log('You clicked me!')
+const startCamera = () => {
+    getMediaStream(constraints);
+}
+
+const stopCamera = () => {
+    video.srcObject.getTracks().forEach(track => track.stop());
+    startCameraButton.innerText = "Start Camera";
+    startCameraButton.classList.remove("btn-danger");
+    startCameraButton.classList.add("btn-primary");
+    startCameraButton.addEventListener("click", startCamera);
+}
+
+startCameraButton.addEventListener("click", startCamera);
+
+const snapPictureButton  = document.getElementById("snapPicture");
+
+snapPictureButton.addEventListener("click", () => {
+    let canvas = document.getElementById("canvas");
+    let context = canvas.getContext("2d");
+    context.drawImage(video, 0, 0, 1200, 600);
 });
