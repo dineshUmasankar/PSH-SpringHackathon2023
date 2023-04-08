@@ -71,3 +71,9 @@ const snapPicture = () => {
 }
 
 snapPictureButton.addEventListener("click", snapPicture);
+
+const socket = io(":3100");
+
+socket.on("port", (data) => {
+    console.log(data);
+});
